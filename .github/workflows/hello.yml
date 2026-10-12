@@ -1,0 +1,17 @@
+# The name shown for this workflow in the GitHub "Actions" tab.
+name: Hello World
+
+# Triggers: when this workflow should run. Here, every time code is pushed.
+on: push
+
+# The collection of jobs in this workflow. Jobs run in parallel by default.
+jobs:
+  # The ID of this job ("greet"). It is also the label shown in the Actions UI.
+  greet:
+    # The type of virtual machine GitHub spins up to run this job (Ubuntu Linux).
+    runs-on: ubuntu-latest
+
+    # The ordered list of commands/actions this job runs, one after another.
+    steps:
+      # A single step: run a shell command on the runner and print the message.
+      - run: echo "Hello from GitHub Actions!"
