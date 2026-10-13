@@ -26,6 +26,11 @@ jobs:
     steps:
       - run: echo "Hello from farewell"
       - run: sleep 20
+  test:
+    needs: greet
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ello"
 
 
   
