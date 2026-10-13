@@ -23,6 +23,9 @@ jobs:
   farewell:
     needs: dud
     runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from farewell"
+      - run: sleep 20
 
 
   
