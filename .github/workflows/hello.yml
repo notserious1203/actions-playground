@@ -10,8 +10,16 @@ jobs:
   greet:
     # The type of virtual machine GitHub spins up to run this job (Ubuntu Linux).
     runs-on: ubuntu-latest
-
-    # The ordered list of commands/actions this job runs, one after another.
     steps:
-      # A single step: run a shell command on the runner and print the message.
-      - run: echo "Hello from GitHub Actions!"
+      - run: echo "Hello from GitHub Actions! greet"
+      - run: sleep 20
+
+  dud:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from dud"
+      - run: sleep 20
+
+
+  
+  
