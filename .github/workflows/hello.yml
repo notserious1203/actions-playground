@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello from GitHub Actions! greet"
+      - run: echo "Event is ${{ github.event_name }} on ${{ github.ref }}"
       - run: sleep 20
 
   dud:
