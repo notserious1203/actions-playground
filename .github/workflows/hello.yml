@@ -2,7 +2,12 @@
 name: Hello World
 
 # Triggers: when this workflow should run. Here, every time code is pushed.
-on: push
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+      
 
 # The collection of jobs in this workflow. Jobs run in parallel by default.
 jobs:
@@ -12,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello from GitHub Actions! greet"
+      - run: echo "Event is ${{ github.event_name }} on ${{ github.ref }}"
       - run: sleep 20
 
   dud:
