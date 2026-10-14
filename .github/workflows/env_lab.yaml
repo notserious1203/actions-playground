@@ -11,17 +11,17 @@ jobs:
     environment: Production
     steps:
       - name: Read env secret
-        run: echo ${{ secrets.APIENDPOINT }}
+        run: echo ${{ vars.APIENDPOINT }}
 
   development:
     runs-on: ubuntu-latest
     environment: Development
     steps:
       - name: Read env secret
-        run: echo ${{ secrets.APIENDPOINT }}
+        run: echo ${{ vars.APIENDPOINT }}
 
   local:
     runs-on: ubuntu-latest
     steps:
       - name: Read env secret
-        run: echo ${{ secrets.APIENDPOINT }}
+        run: echo ${{ vars.APIENDPOINT }}
