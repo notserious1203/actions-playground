@@ -1,4 +1,4 @@
-name: env_lab_new
+name: env_lab_new_1
 
 on:
   workflow_dispatch:

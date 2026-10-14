@@ -34,5 +34,5 @@ jobs:
         run: flake8 . --max-line-length=100
 
       - name: run tests
-        run: pytest -v  
+        run: pytest -v 
 
