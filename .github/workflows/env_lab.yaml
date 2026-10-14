@@ -1,0 +1,27 @@
+name: env_lab
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [lab-env, main]
+
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - name: Read env secret
+        run: echo ${{ secrets.APIENDPOINT }}
+
+  development:
+    runs-on: ubuntu-latest
+    environment: Development
+    steps:
+      - name: Read env secret
+        run: echo ${{ secrets.APIENDPOINT }}
+
+  local:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read env secret
+        run: echo ${{ secrets.APIENDPOINT }}
