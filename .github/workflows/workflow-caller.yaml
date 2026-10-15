@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-tests:
-    uses: ./.github/workflows/lab-reusable.yml   # job level: no runs-on, no steps
+    uses: ./.github/workflows/lab-resuable.yaml   # job level: no runs-on, no steps
     with:
       python-version: '3.11'
 

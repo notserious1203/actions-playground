@@ -17,7 +17,7 @@ jobs:
       py: ${{ steps.ver.outputs.py }}
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-python-env   # adjust to your folder name (you used setup-python)
+      - uses: ./.github/actions/setup-python   # adjust to your folder name (you used setup-python)
         with:
           python-version: ${{ inputs.python-version }}
       - id: ver
