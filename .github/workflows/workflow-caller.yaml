@@ -1,0 +1,17 @@
+name: lab caller
+
+on:
+  push:
+    branches: [lab-stage10]
+
+jobs:
+  call-tests:
+    uses: ./.github/workflows/lab-resuable.yaml   # job level: no runs-on, no steps
+    with:
+      python-version: '3.11'
+
+  show-result:
+    needs: call-tests
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Reusable workflow said ${{ needs.call-tests.outputs.py }}"

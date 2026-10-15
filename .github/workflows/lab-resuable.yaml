@@ -1,0 +1,25 @@
+name: lab reusable
+
+on:
+  workflow_call:                 # makes it callable (no push trigger, so it never runs alone)
+    inputs:
+      python-version:
+        type: string
+        default: '3.12'
+    outputs:
+      py:                        # what the caller can read
+        value: ${{ jobs.test.outputs.py }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest       # its OWN runner
+    outputs:
+      py: ${{ steps.ver.outputs.py }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-python   # adjust to your folder name (you used setup-python)
+        with:
+          python-version: ${{ inputs.python-version }}
+      - id: ver
+        run: echo "py=$(python --version)" >> "$GITHUB_OUTPUT"
+      - run: pytest
