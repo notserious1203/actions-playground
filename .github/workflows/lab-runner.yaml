@@ -1,0 +1,16 @@
+name: lab runner
+
+on: workflow_dispatch
+
+jobs:
+  hosted:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "runner: $RUNNER_NAME"
+          echo "os: $RUNNER_OS"
+
+  selfhosted:
+    runs-on: [self-hosted, gpu]
+    steps:
+      - run: echo "this will never run"
